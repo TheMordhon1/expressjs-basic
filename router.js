@@ -1,7 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
+const MyLog = (req, res, next) => {
+	console.log('LOGGED')
+	next()
+};
+
+router.get('/', MyLog, (req, res) => {
+	console.log('Hello')
 	res.send('Hello World!')
 })
 
