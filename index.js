@@ -25,6 +25,12 @@ app.get('/user/:id', (req, res) => {
 	}
 })
 
+app.get('/user', (req, res) => {
+	const name = req.query.name;
+	const age = req.query.age;
+	res.send(name + " " + age);
+})
+
 app.post('/post', (req, res) => {
 	res.send('Got a POST request')
 })
