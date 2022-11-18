@@ -6,6 +6,25 @@ app.get('/', (req, res) => {
 	res.send('Hello World!')
 })
 
+app.get('/user/:id', (req, res) => {
+	const id = parseInt(req.params.id);
+	if (id === 1) {
+		const user = {
+			id: 1,
+			name: "Romdon",
+			age: 26,
+		}
+		res.send(user)
+	} else {
+		const user = {
+			id: 2,
+			name: "Dian",
+			age: 26,
+		}
+		res.send(user)
+	}
+})
+
 app.post('/post', (req, res) => {
 	res.send('Got a POST request')
 })
